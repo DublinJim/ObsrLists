@@ -2,6 +2,7 @@ package com.example.obsrlists;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 import javafx.collections.FXCollections;
@@ -40,10 +41,13 @@ public class ObserverlistsControl implements Initializable {
     }
 
     @FXML
-    void changelabel() {
+    void changeLabel() {
         lbl1.setVisible(true);
         lbl1.setText("Item added");
     }
 
+    public void closeAll(MouseEvent mouseEvent) {
+        Platform.exit();
+    }
 }
 
